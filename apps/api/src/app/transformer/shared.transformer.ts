@@ -1,4 +1,9 @@
-import { CurrencyID, Price } from '@meli/api-interfaces';
+import {
+  CurrencyID,
+  Price,
+  Attribute,
+  AttributeId,
+} from '@meli/api-interfaces';
 
 export const transformPrice = (currency: CurrencyID, price: number): Price => {
   const amount = Math.floor(price);
@@ -15,3 +20,7 @@ export const author = {
   name: 'Esteban',
   lastname: 'Ulke',
 };
+
+export const transformCondition = (attributes: Attribute[]): string =>
+  attributes.find((attribute) => attribute.id === AttributeId.ITEMCONDITION)
+    .value_name;

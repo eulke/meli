@@ -4,7 +4,11 @@ import {
   IItem,
   ICategory,
 } from '@meli/api-interfaces';
-import { author, transformPrice } from './shared.transformer';
+import {
+  author,
+  transformPrice,
+  transformCondition,
+} from './shared.transformer';
 
 const transformDescription = (description: IDescription): string =>
   description.plain_text;
@@ -19,7 +23,7 @@ export const transformItem = (
     price,
     currency_id,
     pictures,
-    condition,
+    attributes,
     sold_quantity,
     shipping: { free_shipping },
   }: IItemDetail,
@@ -32,7 +36,7 @@ export const transformItem = (
     title,
     price: transformPrice(currency_id, price),
     picture: pictures[0]?.url,
-    condition,
+    condition: transformCondition(attributes),
     free_shipping,
     sold_quantity,
     description: transformDescription(description),

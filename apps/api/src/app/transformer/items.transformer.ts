@@ -8,7 +8,11 @@ import {
   Filter,
   PathFromRoot,
 } from '@meli/api-interfaces';
-import { transformPrice, author } from './shared.transformer';
+import {
+  transformPrice,
+  author,
+  transformCondition,
+} from './shared.transformer';
 
 const transformItem = ({
   id,
@@ -16,7 +20,7 @@ const transformItem = ({
   currency_id,
   price,
   thumbnail,
-  condition,
+  attributes,
   shipping: { free_shipping },
   address: { state_name: state },
 }: Result): Item => ({
@@ -24,7 +28,7 @@ const transformItem = ({
   title,
   price: transformPrice(currency_id, price),
   picture: thumbnail,
-  condition,
+  condition: transformCondition(attributes),
   free_shipping,
   state,
 });
