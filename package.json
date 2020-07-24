@@ -4,7 +4,9 @@
   "license": "MIT",
   "scripts": {
     "nx": "nx",
-    "start": "nx serve",
+    "start": "concurrently -n w: \"yarn:start-*\"",
+    "start-app": "nx serve mercadolibre",
+    "start-api": "nx serve api",
     "build": "nx build",
     "test": "nx test",
     "lint": "nx workspace-lint && nx lint",
@@ -28,6 +30,7 @@
   "private": true,
   "dependencies": {
     "axios": "^0.19.2",
+    "concurrently": "^5.2.0",
     "cors": "^2.8.5",
     "document-register-element": "1.13.1",
     "express": "4.17.1",
