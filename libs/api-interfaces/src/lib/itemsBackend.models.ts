@@ -166,7 +166,7 @@ export interface Attribute {
   attribute_group_name: AttributeGroupName;
   attribute_group_id: AttributeGroupID;
   source: number;
-  id: ID;
+  id: AttributeId;
   value_id: null | string;
   value_struct: any;
   values: AttributeValue[];
@@ -382,7 +382,7 @@ export enum SiteID {
   MLA = 'MLA',
 }
 
-export enum ID {
+export enum AttributeId {
   BRAND = 'BRAND',
   DETAILEDMODEL = 'DETAILED_MODEL',
   ITEMCONDITION = 'ITEM_CONDITION',

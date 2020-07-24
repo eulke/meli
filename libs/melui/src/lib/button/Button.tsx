@@ -6,13 +6,13 @@ import Loader from '../loader/Loader';
 /* eslint-disable-next-line */
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant: 'principal' | 'outline';
+  variant?: 'principal' | 'outline';
   isLoading?: boolean;
 }
 
 export const Button: FunctionComponent<ButtonProps> = ({
   children,
-  variant,
+  variant = 'principal',
   isLoading,
   ...props
 }) => {

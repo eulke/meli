@@ -1,0 +1,14 @@
+.detail-box {
+  background-color: #fff;
+  border-radius: 4px;
+  padding: 32px;
+  .info {
+    display: flex;
+    img {
+      width: 680px;
+    }
+  }
+  .description {
+    width: 680px;
+  }
+}

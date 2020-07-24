@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import * as api from '../services/items.service';
-import { Search, Price } from '@meli/api-interfaces';
+import { Search } from '@meli/api-interfaces';
 import { List, Breadcrumbs } from '@meli/melui';
 import shipping from '../../assets/ic_shipping.png';
 import '../app.scss';
 import './Results.scss';
+import { formatCurrency } from '../utils/utils';
 
-export const Results = ({ ...props }) => {
+export const Results = () => {
   const [results, setResults] = useState<Search>();
   let query = useQuery();
   const queryValue = query.get('search');
@@ -20,20 +21,13 @@ export const Results = ({ ...props }) => {
     getResults();
   }, [queryValue]);
 
-  const formatCurrency = (price: Price) =>
-    new Intl.NumberFormat('es-AR', {
-      style: 'currency',
-      currency: price.currency,
-      minimumFractionDigits: 0,
-    }).format(price.amount);
-
   return (
     <div className="container">
       <Breadcrumbs items={results?.categories} />
       <List>
         {results?.items?.map((item) => (
-          <Link to={`items/${item.id}`}>
-            <List.Item key={item.id}>
+          <Link to={`items/${item.id}`} key={item.id}>
+            <List.Item>
               <img className="product-image" src={item.picture} alt="item" />
               <div className="item-info">
                 <div className="price">
