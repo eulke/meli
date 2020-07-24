@@ -10,7 +10,7 @@ import './Search.scss';
 
 /* eslint-disable-next-line */
 export interface SearchProps extends FormHTMLAttributes<HTMLFormElement> {
-  text?: string;
+  placeholder?: string;
 }
 
 interface SearchComposition {
@@ -21,10 +21,10 @@ const Search: ForwardRefExoticComponent<
   SearchProps & RefAttributes<HTMLInputElement>
 > &
   SearchComposition = forwardRef<HTMLInputElement, SearchProps>(
-  ({ text, children, ...props }, ref) => {
+  ({ placeholder, children, ...props }, ref) => {
     return (
       <form className="search-container" {...props}>
-        <Input ref={ref} type="text" placeholder={text} />
+        <Input ref={ref} type="text" placeholder={placeholder} />
         {children}
       </form>
     );
