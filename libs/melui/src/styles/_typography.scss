@@ -1,0 +1,24 @@
+$mui-semibold: 600;
+$section-item: 24px;
+$section-description: 28px;
+
+%title-base {
+  font-weight: $mui-semibold;
+  line-height: 1.05;
+  margin: 1em 0;
+}
+
+@function get-section($section) {
+  @if $section == 'item' {
+    @return $section-item;
+  } @else if $section == 'description' {
+    @return $section-description;
+  } @else {
+    @error "$section must be item or description, got #{$section}";
+  }
+}
+
+@mixin mui-title($section: 'item') {
+  @extend %title-base;
+  font-size: get-section($section);
+}

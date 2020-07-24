@@ -16,7 +16,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@meli/api-interfaces": ["libs/api-interfaces/src/index.ts"]
+      "@meli/api-interfaces": ["libs/api-interfaces/src/index.ts"],
+      "@meli/melui": ["libs/melui/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

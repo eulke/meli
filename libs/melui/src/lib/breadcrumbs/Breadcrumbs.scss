@@ -1,0 +1,16 @@
+.breadcrumbs {
+  font: 14px sans-serif;
+  color: #a3a3a3;
+  padding: 16px 0;
+  span {
+    &:not(:first-of-type)::before {
+      content: '/';
+      display: inline;
+      padding: 0 8px;
+    }
+    &:last-of-type {
+      font-weight: bold;
+      color: #999999;
+    }
+  }
+}

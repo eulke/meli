@@ -1,0 +1,9 @@
+.list {
+  width: 100%;
+  .list-item {
+    padding: 16px;
+    &:not(:last-of-type) {
+      border-bottom: 1px solid #eeee;
+    }
+  }
+}

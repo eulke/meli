@@ -1,0 +1,28 @@
+.search-container {
+  display: inline-flex;
+  position: relative;
+  width: 100%;
+  input {
+    padding-right: 37px;
+  }
+  button {
+    border: none;
+    outline: none;
+    line-height: 0;
+    height: 37px;
+    width: fit-content;
+    padding: 0 8px;
+    position: absolute;
+    right: 0;
+  }
+}
+ul {
+  margin: 0;
+  font: 18px sans-serif;
+  list-style-type: none;
+  padding: 0;
+  li {
+    padding: 8px 16px;
+    cursor: pointer;
+  }
+}

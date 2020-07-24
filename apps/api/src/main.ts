@@ -1,16 +1,19 @@
 import * as express from 'express';
-import { Message } from '@meli/api-interfaces';
+import * as cors from 'cors';
+import api from './app';
 
 const app = express();
+const port = process.env.port || 3333;
 
-const greeting: Message = { message: 'Welcome to api!' };
+app.use(cors());
 
-app.get('/api', (req, res) => {
-  res.send(greeting);
+app.use('/api', api);
+
+app.get('/', (req, res) => {
+  res.send({ message: 'Welcome to server!' });
 });
 
-const port = process.env.port || 3333;
 const server = app.listen(port, () => {
-  console.log('Listening at http://localhost:' + port + '/api');
+  console.log(`Listening at http://localhost:${port}/`);
 });
 server.on('error', console.error);
