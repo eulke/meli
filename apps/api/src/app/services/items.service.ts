@@ -11,6 +11,7 @@ export const search = async (request: Request): Promise<Search> => {
 
     return transformItems(items);
   } catch (error) {
+    console.log(error)
     return error;
   }
 };
@@ -23,6 +24,7 @@ export const getById = async (id: string): Promise<IItem> => {
 
     return transformItem(item, description, category);
   } catch (error) {
+    console.log(error)
     return error;
   }
 };

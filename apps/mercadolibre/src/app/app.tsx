@@ -1,33 +1,23 @@
 import React from 'react';
-import { Header, Search } from '@meli/melui';
-import { BrowserRouter as Router } from 'react-router-dom';
-import logo from '../assets/Logo_ML.png';
-import find from '../assets/ic_Search.png';
-import './app.scss'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+
+import './app.scss';
+import { Detail } from './containers/Detail';
+import { Results } from './containers/Results';
+import { SearchBar } from './components/SearchBar';
 
 export const App = () => {
-  // useEffect(() => {
-  //   fetch('/api/items?q=:pelota&limit=4')
-  //     .then((r) => r.json())
-  //     .then(setMessage);
-  // }, []);
-
   return (
     <Router>
-      <Header>
-        <Header.Brand>
-          <img src={logo} alt="logo" />
-        </Header.Brand>
-        <Header.Item>
-          <Search placeholder="Nunca dejes de buscar">
-            <Search.Button>
-              <img src={find} alt="search" />
-            </Search.Button>
-          </Search>
-        </Header.Item>
-      </Header>
+      <SearchBar />
+      <Switch>
+        <Route exact path="/items">
+          <Results />
+        </Route>
+        <Route exact path="/items/:id">
+          <Detail />
+        </Route>
+      </Switch>
     </Router>
   );
 };
-
-export default App;

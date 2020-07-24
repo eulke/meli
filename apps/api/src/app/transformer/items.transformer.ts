@@ -18,6 +18,7 @@ const transformItem = ({
   thumbnail,
   condition,
   shipping: { free_shipping },
+  address: { state_name: state },
 }: Result): Item => ({
   id,
   title,
@@ -25,23 +26,34 @@ const transformItem = ({
   picture: thumbnail,
   condition,
   free_shipping,
+  state,
 });
 
 const findCategoryFilter = <T extends AvailableFilterValue | FilterValue>(
   filters: Filter<T>[]
-) => filters.find((filter) => filter.id === 'category').values;
+) => filters.find((filter) => filter.id === 'category')?.values;
 
 const transformCategories = (
   availableFilterValues: AvailableFilterValue[],
   filterValues: PathFromRoot[]
 ) => {
-  const filterValueNames = filterValues.map((value) => value.name);
-  const availableFilterValueName = availableFilterValues.reduce(
-    (max, category) => (category.results > max.results ? category : max),
-    { name: '', results: 0 } as AvailableFilterValue
-  ).name;
+  let categories = [];
 
-  return [...filterValueNames, availableFilterValueName];
+  if (filterValues) {
+    const filterValueNames = filterValues.map((value) => value.name);
+
+    categories = [...categories, ...filterValueNames];
+  }
+
+  if (availableFilterValues) {
+    const availableFilterValueName = availableFilterValues?.reduce(
+      (max, category) => (category.results > max.results ? category : max),
+      { name: '', results: 0 } as AvailableFilterValue
+    ).name;
+
+    categories = [...categories, availableFilterValueName];
+  }
+  return categories;
 };
 
 export const transformItems = ({

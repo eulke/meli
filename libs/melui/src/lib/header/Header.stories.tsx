@@ -31,7 +31,7 @@ export const full = () => {
     <Header>
       <Header.Brand>Logo</Header.Brand>
       <Header.Item>
-        <Search text="Buscá lo que quieras" ref={ref} onSubmit={submit}>
+        <Search placeholder="Buscá lo que quieras" ref={ref} onSubmit={submit}>
           <Search.Button>Buscar</Search.Button>
         </Search>
       </Header.Item>

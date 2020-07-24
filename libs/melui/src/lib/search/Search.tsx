@@ -4,6 +4,7 @@ import React, {
   FormHTMLAttributes,
   RefAttributes,
   ForwardRefExoticComponent,
+  ButtonHTMLAttributes,
 } from 'react';
 import { Input } from '../input/Input';
 import './Search.scss';
@@ -31,7 +32,7 @@ const Search: ForwardRefExoticComponent<
   }
 );
 
-interface ButtonProps {}
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {}
 
 const Button: FunctionComponent<ButtonProps> = ({ children, ...props }) => (
   <button type="submit" {...props}>

@@ -1,9 +1,9 @@
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, HTMLAttributes } from 'react';
 
 import './List.scss';
 
 /* eslint-disable-next-line */
-export interface ListProps {}
+export interface ListProps extends HTMLAttributes<HTMLUListElement> {}
 
 interface ListComposition {
   Item?: FunctionComponent<ItemProps>;
@@ -11,6 +11,7 @@ interface ListComposition {
 
 const List: FunctionComponent<ListProps> & ListComposition = ({
   children,
+  className,
   ...props
 }) => {
   return (
@@ -20,7 +21,7 @@ const List: FunctionComponent<ListProps> & ListComposition = ({
   );
 };
 
-export interface ItemProps {}
+export interface ItemProps extends HTMLAttributes<HTMLLIElement> {}
 
 const Item: FunctionComponent<ItemProps> = ({ children, ...props }) => (
   <li {...props} className="list-item">

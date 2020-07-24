@@ -7,11 +7,13 @@ export interface BreadcrumbsProps {
   items: string[];
 }
 
-export const Breadcrumbs: FunctionComponent<BreadcrumbsProps> = ({ items = [] }) => {
+export const Breadcrumbs: FunctionComponent<BreadcrumbsProps> = ({
+  items = [],
+}) => {
   return (
     <div className="breadcrumbs">
       {items.map((item) => (
-        <span>{item}</span>
+        <span key={item}>{item}</span>
       ))}
     </div>
   );
