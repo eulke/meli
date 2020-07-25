@@ -47,6 +47,8 @@ You can serve Storybook by running:
 
     yarn storybook
 
+and open: http://localhost:4400/
+
 ## Stack
 ### Nx.dex
 Before start talking about Nx, why monorepo?:
@@ -73,6 +75,15 @@ I like to build the basic components that every app will need in an isolated env
 ### Node.js (Express)
 Node.js with express for communication with the REST API and handling data in the server.
 ## Workspace arquitecture
+![arquitecture](https://i.imgur.com/qPvl9F0.png)
+
+In the structure you can find two separate folders:
+
+ - **apps**: It holds the application type projects. In this case the mercadolibre react app and the api express app.
+ - **libs**: It holds all the libraries. In this case the shared interfaces and the melui ui library with react components and storybook configuration.
+
+ 
+
 ### To do
 
  - [ ] Grids
