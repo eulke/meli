@@ -4,12 +4,20 @@
   padding: 32px;
   .info {
     display: flex;
-    img {
+    .image-container {
       width: 680px;
+      display: flex;
+      justify-content: center;
+      img {
+        max-width: 680px;
+        max-height: 680px;
+      }
     }
     .shop-container {
+      width: 37%;
       .condition {
         font-size: 14px;
+        color: #666666
       }
       .title {
         font-size: 24px;
@@ -30,6 +38,7 @@
     .detail {
       font-size: 16px;
       margin: inherit;
+      color: #999999;
     }
   }
 }

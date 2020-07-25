@@ -39,14 +39,20 @@ export const Detail = () => {
       {item && (
         <div className="detail-box">
           <div className="info">
-            <img src={item.picture} alt="product" />
+            <div className="image-container">
+              <img src={item.picture} alt="product" />
+            </div>
             <div className="shop-container">
               <span className="condition">
                 {item.condition} - {item.sold_quantity} vendidos
               </span>
               <h3 className="title">{item.title}</h3>
               <p className="price">{formatCurrency(item.price)}</p>
-              <Button size="fullwidth" isLoading={loading} onClick={() => setLoading(true)}>
+              <Button
+                size="fullwidth"
+                isLoading={loading}
+                onClick={() => setLoading(true)}
+              >
                 Comprar
               </Button>
             </div>
