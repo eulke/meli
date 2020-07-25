@@ -83,7 +83,7 @@ This is the frontend library that the company uses and the one that i feel more 
 ### Scss
 The style preprocessor that the company uses
 ### Storybook
-I like to build the basic components that every app will need in an isolated environment. Storybook give us that hability in an easy way. Making component stories give us the hability to use it for documentation.
+I like to build the basic components that every app will need in an isolated environment. Storybook give us that ability in an easy way. Making component stories give us the ability to use it for documentation.
 ### Node.js (Express)
 Node.js with express for communication with the REST API and handling data in the server.
 ### Prettier ESLint
