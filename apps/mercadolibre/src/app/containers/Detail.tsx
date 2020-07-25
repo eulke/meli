@@ -31,17 +31,17 @@ export const Detail = () => {
           <div className="info">
             <img src={item.picture} alt="product" />
             <div className="shop-container">
-              <span>
+              <span className="condition">
                 {item.condition} - {item.sold_quantity} vendidos
               </span>
-              <h3>{item.title}</h3>
-              <p>{formatCurrency(item.price)}</p>
+              <h3 className="title">{item.title}</h3>
+              <p className="price">{formatCurrency(item.price)}</p>
               <Button>Comprar</Button>
             </div>
           </div>
           <div className="description">
-            <p>Descripción del producto</p>
-            <p>{item.description}</p>
+            <p className="title">Descripción del producto</p>
+            <p className="detail">{item.description}</p>
           </div>
         </div>
       )}

@@ -7,8 +7,29 @@
     img {
       width: 680px;
     }
+    .shop-container {
+      .condition {
+        font-size: 14px;
+      }
+      .title {
+        font-size: 24px;
+        margin: 8px auto auto;
+      }
+      .price {
+        font-size: 46px;
+        margin: 32px auto;
+      }
+    }
   }
   .description {
     width: 680px;
+    .title {
+      font-size: 28px;
+      margin: 32px auto;
+    }
+    .detail {
+      font-size: 16px;
+      margin: inherit;
+    }
   }
 }
