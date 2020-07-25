@@ -3,10 +3,9 @@ import { useLocation, Link } from 'react-router-dom';
 import * as api from '../services/items.service';
 import { Search } from '@meli/api-interfaces';
 import { List, Breadcrumbs } from '@meli/melui';
-import shipping from '../../assets/ic_shipping.png';
+import { ItemCard } from '../components/ItemCard/ItemCard';
 import '../app.scss';
 import './Results.scss';
-import { formatCurrency } from '../utils/utils';
 
 export const Results = () => {
   const [results, setResults] = useState<Search>();
@@ -27,18 +26,8 @@ export const Results = () => {
       <List className="results">
         {results?.items?.map((item) => (
           <List.Item key={item.id}>
-            <Link to={`items/${item.id}`} className="item">
-              <img className="product-image" src={item.picture} alt="item" />
-              <div className="item-info">
-                <div className="price">
-                  {formatCurrency(item.price)}
-                  {item.free_shipping && (
-                    <img src={shipping} alt="free_shipping" />
-                  )}
-                </div>
-                <h3 className="title">{item.title}</h3>
-              </div>
-              <span className="state">{item.state}</span>
+            <Link to={`items/${item.id}`}>
+              <ItemCard item={item} />
             </Link>
           </List.Item>
         ))}
