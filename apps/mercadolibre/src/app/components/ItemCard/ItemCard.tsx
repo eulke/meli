@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import { Item } from '@meli/api-interfaces';
-import shipping from 'apps/mercadolibre/src/assets/ic_shipping.png';
+import shipping from '../../../assets/ic_shipping.png';
 import { formatCurrency } from '../../utils/utils';
 import './ItemCard.scss';
 
