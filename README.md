@@ -104,4 +104,4 @@ Inside *apps/* you can find
  - [ ] SEO proof
  - [ ] Next.js
  - [ ] No results message
- - [ ] Loading on fetch data
+ - [ ] Loading spinner on data fetch
