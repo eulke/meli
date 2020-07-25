@@ -23,6 +23,16 @@ export const Detail = () => {
     getItem();
   }, []);
 
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    if (loading) {
+      setTimeout(() => {
+        setLoading(false);
+      }, 1000);
+    }
+  }, [loading]);
+
   return (
     <div className="container">
       {categories && <Breadcrumbs items={categories} />}
@@ -36,7 +46,9 @@ export const Detail = () => {
               </span>
               <h3 className="title">{item.title}</h3>
               <p className="price">{formatCurrency(item.price)}</p>
-              <Button>Comprar</Button>
+              <Button size="fullwidth" isLoading={loading} onClick={() => setLoading(true)}>
+                Comprar
+              </Button>
             </div>
           </div>
           <div className="description">

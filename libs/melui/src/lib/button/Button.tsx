@@ -7,12 +7,14 @@ import Loader from '../loader/Loader';
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: 'principal' | 'outline';
+  size?: 'normal' | 'fullwidth';
   isLoading?: boolean;
 }
 
 export const Button: FunctionComponent<ButtonProps> = ({
   children,
   variant = 'principal',
+  size = 'normal',
   isLoading,
   ...props
 }) => {
@@ -50,7 +52,7 @@ export const Button: FunctionComponent<ButtonProps> = ({
   return (
     <button
       {...props}
-      className={`${variant}`}
+      className={`${variant} ${size}`}
       ref={ref}
       style={
         showLoader
