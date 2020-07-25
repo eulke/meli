@@ -7,11 +7,11 @@ export default {
   title: 'Header',
 };
 
-export const mercadolibre = () => {
+export const Mercadolibre = () => {
   return <Header />;
 };
 
-export const onlyLogo = () => {
+export const OnlyLogo = () => {
   return (
     <Header>
       <Header.Brand>Logo</Header.Brand>
@@ -19,7 +19,7 @@ export const onlyLogo = () => {
   );
 };
 
-export const full = () => {
+export const Full = () => {
   const ref = useRef<HTMLInputElement>(null);
 
   const submit = (e: FormEvent) => {
@@ -39,6 +39,6 @@ export const full = () => {
   );
 };
 
-export const mercadopago = () => {
+export const Mercadopago = () => {
   return <Header brand="mercadopago" />;
 };

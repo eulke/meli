@@ -21,7 +21,7 @@ export const Detail = () => {
       setItem(result);
     };
     getItem();
-  }, []);
+  }, [id]);
 
   const [loading, setLoading] = useState(false);
 

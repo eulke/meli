@@ -10,7 +10,7 @@ import { formatCurrency } from '../utils/utils';
 
 export const Results = () => {
   const [results, setResults] = useState<Search>();
-  let query = useQuery();
+  const query = useQuery();
   const queryValue = query.get('search');
 
   useEffect(() => {

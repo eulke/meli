@@ -8,17 +8,17 @@ export default {
   title: 'Button',
 };
 
-export const principal = () => (
+export const Principal = () => (
   <Button variant="principal" onClick={action('button clicked')}>
     {text('Label', 'Comprar')}
   </Button>
 );
 
-export const outline = () => (
+export const Outline = () => (
   <Button variant="outline">{text('Label', 'Agregar al carrito')}</Button>
 );
 
-export const withLoader = () => {
+export const WithLoader = () => {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
