@@ -1,11 +1,13 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import Breadcrumbs from './Breadcrumbs';
+import { Breadcrumbs } from './Breadcrumbs';
 
 describe(' Breadcrumbs', () => {
   it('should render successfully', () => {
-    const { baseElement } = render(<Breadcrumbs />);
+    const { baseElement } = render(
+      <Breadcrumbs items={['hola', 'como', 'estas']} />
+    );
     expect(baseElement).toBeTruthy();
   });
 });
