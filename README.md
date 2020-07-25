@@ -11,6 +11,7 @@
 	 -  [Scss](#scss)
 	 -  [Storybook](#storybook)
 	 -  [Node.js (Express)](#node.js-(express))
+	 - [Prettier ESLint](#prettier-eslint)
  - [Workspace arquitecture](#workspace-arquitecture)
  - [To do](#to-do)
 
@@ -49,6 +50,17 @@ You can serve Storybook by running:
 
 and open: http://localhost:4400/
 
+### Test
+You can run the tests of all apps and libs simultaneously by running:
+
+    yarn test
+*Only basic tests were created*
+
+### Linting
+You can run the linting of all apps and libs simultaneously by running:
+
+    yarn lint
+
 ## Stack
 ### Nx.dex
 Before start talking about Nx, why monorepo?:
@@ -74,6 +86,9 @@ The style preprocessor that the company uses
 I like to build the basic components that every app will need in an isolated environment. Storybook give us that hability in an easy way. Making component stories give us the hability to use it for documentation.
 ### Node.js (Express)
 Node.js with express for communication with the REST API and handling data in the server.
+### Prettier ESLint
+With this set of tools we gain consistency in our code 
+
 ## Workspace arquitecture
 ![arquitecture](https://i.imgur.com/qPvl9F0.png)
 
