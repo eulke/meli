@@ -3,6 +3,7 @@
 ### Index
 
  - [Installation](#installation)
+ - [Commands](#commands)
  - [Stack](#stack)
 	 -  [Nx.dev](#nx.dev)
 	 -  [Typescript](#typescript)
@@ -40,6 +41,12 @@ The last command will step us inside the project and install the required depend
 
 ![homepage](https://i.imgur.com/UTKYcXF.png)
 
+## Commands
+### Storybook
+You can serve Storybook by running:
+
+    yarn storybook
+
 ## Stack
 ### Nx.dex
 Before start talking about Nx, why monorepo?:
@@ -62,7 +69,7 @@ This is the frontend library that the company uses and the one that i feel more 
 ### Scss
 The style preprocessor that the company uses
 ### Storybook
-I like to build the basic components that every app will need in an isolated environment. Storybook give us that ability in an easy way. Making component stories give us the ability to use it for documentation.
+I like to build the basic components that every app will need in an isolated environment. Storybook give us that hability in an easy way. Making component stories give us the hability to use it for documentation.
 ### Node.js (Express)
 Node.js with express for communication with the REST API and handling data in the server.
 ## Workspace arquitecture

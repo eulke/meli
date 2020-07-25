@@ -7,6 +7,7 @@
     "start": "concurrently -n w: \"yarn:start-*\"",
     "start-app": "nx serve mercadolibre",
     "start-api": "nx serve api",
+    "storybook": "nx run melui:storybook --uiFramework=@storybook/react",
     "build": "nx build",
     "test": "nx test",
     "lint": "nx workspace-lint && nx lint",
