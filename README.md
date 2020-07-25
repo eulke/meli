@@ -81,6 +81,18 @@ In the structure you can find two separate folders:
 
  - **apps**: It holds the application type projects. In this case the mercadolibre react app and the api express app.
  - **libs**: It holds all the libraries. In this case the shared interfaces and the melui ui library with react components and storybook configuration.
+ 
+Inside *apps/* you can find
+- **api/** To communication between the frontend and the meli REST API.
+	 - **connectors/** Connect with external data, in this case the API endpoints from mercadolibre.
+	 - **services/** Call the connector methods and do some logic with the data that connectors returns (in this case, transform data)
+	 - **controllers/** Receive the calls from the routes and communicate with service.
+	 - **routes/** Manage api routes and assign a controller to route.
+ - **mercadolibre/** React app
+	 - **components/** Has the components specific for an app that we build with the melui library.
+	 - **containers/** Has the components that the router renders, a page or screen.
+	 - **services/** Has the services that communicate with the express app.
+	 - **utils/** Has some app utils, in this case a price formatter. If the project grows, we can put this on utils library inside *libs/*
 
  
 
@@ -89,3 +101,7 @@ In the structure you can find two separate folders:
  - [ ] Grids
  - [ ] Better scss
  - [ ] More tests (it has only basic ones on UI lib)
+ - [ ] SEO proof
+ - [ ] Next.js
+ - [ ] No results message
+ - [ ] Loading on fetch data
