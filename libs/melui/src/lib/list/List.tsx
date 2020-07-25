@@ -15,7 +15,7 @@ const List: FunctionComponent<ListProps> & ListComposition = ({
   ...props
 }) => {
   return (
-    <ul {...props} className="list">
+    <ul {...props} className={`list ${className}`}>
       {children}
     </ul>
   );
@@ -23,8 +23,8 @@ const List: FunctionComponent<ListProps> & ListComposition = ({
 
 export interface ItemProps extends HTMLAttributes<HTMLLIElement> {}
 
-const Item: FunctionComponent<ItemProps> = ({ children, ...props }) => (
-  <li {...props} className="list-item">
+const Item: FunctionComponent<ItemProps> = ({ children, className,...props }) => (
+  <li {...props} className={`list-item ${className}`}>
     {children}
   </li>
 );

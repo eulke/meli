@@ -3,7 +3,7 @@
   .list-item {
     padding: 16px 0;
     margin: auto 16px;
-    &:not(:last-of-type) {
+    &:not(:last-child) {
       border-bottom: 1px solid #eeee;
     }
   }

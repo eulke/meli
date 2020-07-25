@@ -24,10 +24,10 @@ export const Results = () => {
   return (
     <div className="container">
       <Breadcrumbs items={results?.categories} />
-      <List>
+      <List className="results">
         {results?.items?.map((item) => (
-          <Link to={`items/${item.id}`} key={item.id}>
-            <List.Item>
+          <List.Item key={item.id}>
+            <Link to={`items/${item.id}`} className="item">
               <img className="product-image" src={item.picture} alt="item" />
               <div className="item-info">
                 <div className="price">
@@ -39,8 +39,8 @@ export const Results = () => {
                 <h3 className="title">{item.title}</h3>
               </div>
               <span className="state">{item.state}</span>
-            </List.Item>
-          </Link>
+            </Link>
+          </List.Item>
         ))}
       </List>
     </div>
